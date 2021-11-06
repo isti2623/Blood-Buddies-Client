@@ -6,7 +6,7 @@ const Success = () => {
     return (
         <div className='container my-5'>
             <div className="row">
-                <div className="col-lg-3 card">
+                <div className="col-lg-3 card ">
                     <div class="card-body text-center">
                         <FontAwesomeIcon className='fs-1 text-danger' icon={faHeart} />
                         <h5 class="card-title mt-2 text-danger">2578

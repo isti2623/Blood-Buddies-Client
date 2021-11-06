@@ -1,6 +1,6 @@
 .banner{
     background-image: url('../../../images/home_banner.jpg');
-    height: 850px;
+    height: 800px;
     width: 100%;
     background-blend-mode: overlay;
     background-repeat: no-repeat;
@@ -9,7 +9,7 @@
     position: relative;
     }
     .text-part{
-        margin-top: 200px;
+        margin-top: 150px;
     }
     .custom-h1{
         font-weight: 900;

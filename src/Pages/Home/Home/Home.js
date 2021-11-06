@@ -5,6 +5,7 @@ import Banner from '../Banner/Banner';
 import HelpfullInfo from '../HelpfullInfo/HelpfullInfo';
 import HomeCampaign from '../HomeCampaign/HomeCampaign';
 import JoinWithUs from '../JoinWithUs/JoinWithUs';
+import Success from '../Success/Success';
 import WhoWeAre from '../WhoWeAre/WhoWeAre';
 
 const Home = () => {
@@ -17,6 +18,7 @@ const Home = () => {
             <JoinWithUs></JoinWithUs>
             <HomeCampaign></HomeCampaign>
             <HelpfullInfo></HelpfullInfo>
+            <Success></Success>
         </div>
     );
 };

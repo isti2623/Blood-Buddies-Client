@@ -1,0 +1,28 @@
+.divider{
+    width: 72px;
+    height: 2px;
+    margin-top: 0px;
+    position: relative;
+    top: -3px;
+
+}
+.div-head{
+    display: inline-block;
+    width: 70px;
+    height: 3px;
+    background: #EF3D32;
+    margin-top: 8px;
+}
+ul {
+    list-style: none;
+  }
+  
+li::before {content: "•"; 
+    color: red;
+    display: inline-block;
+     width: 1em;
+    margin-left: -1em
+}
+.text-card{
+    margin-right: -25px;
+}

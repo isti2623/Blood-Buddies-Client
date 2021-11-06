@@ -6,6 +6,7 @@ const HomeCampaign = () => {
         <div className='my-5'>
             <div className="container">
                 <div className="row">
+
                     <div className="col-lg-6 my-5 bg-light p-3 text-card shadow">
                         <div>
                             <h1 className='fw-bold mt-5 ms-3 fs-1'>OUR CAMPAIGNS
@@ -20,6 +21,7 @@ const HomeCampaign = () => {
                     <div className="col-lg-6 my-5">
                         <img className='img-fluid' src={homeCampaign} alt="" />
                     </div>
+
                 </div>
             </div>
         </div>

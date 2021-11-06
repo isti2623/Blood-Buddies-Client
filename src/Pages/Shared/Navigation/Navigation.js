@@ -6,7 +6,7 @@ import { Link, NavLink } from 'react-router-dom';
 const Navigation = () => {
     return (
         <div>
-            <Navbar collapseOnSelect expand="lg" bg='white' variant="light">
+            <Navbar sticky="top" collapseOnSelect expand="lg" bg='light' variant="light">
                 <Container>
                     <Link to='/home'><Navbar.Brand><img src={logo} alt="" /></Navbar.Brand></Link>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />

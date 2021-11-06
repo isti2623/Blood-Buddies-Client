@@ -1,6 +1,6 @@
 .banner-vol{
     background-image: url('../../../images/volunteer-bg.jpg');
-    height: 800px;
+    height: 900px;
     width: 100%;
     background-blend-mode: overlay;
     background-repeat: no-repeat;
@@ -13,3 +13,4 @@
     .custom-card-pad{
         margin-top: -110px;
     }
+  

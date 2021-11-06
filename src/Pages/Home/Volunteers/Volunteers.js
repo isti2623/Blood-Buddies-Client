@@ -63,7 +63,7 @@ const Volunteers = () => {
                         <div className="row">
                             <div className="col-lg-4"></div>
                             <div className="col-lg-8">
-                                <Link to='/campaign'> <div className="btn btn-danger p-3 ms-4 mt-5 fw-bold">BECOME A VOLUNTEER</div></Link>
+                                <Link to='/'> <div className="btn btn-danger p-3 custom-button-pad fw-bold">BECOME A VOLUNTEER</div></Link>
                             </div>
                         </div>
                     </div>

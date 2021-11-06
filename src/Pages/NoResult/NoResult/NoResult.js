@@ -1,9 +1,12 @@
 import React from 'react';
+import Navigation from '../../Shared/Navigation/Navigation';
+import TopHeader from '../../Shared/TopHeader/TopHeader';
 
 const NoResult = () => {
     return (
         <div>
-            <h2>404!</h2>
+            <TopHeader></TopHeader>
+            <Navigation></Navigation>
         </div>
     );
 };

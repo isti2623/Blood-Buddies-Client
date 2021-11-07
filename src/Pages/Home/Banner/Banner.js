@@ -18,7 +18,6 @@ const Banner = () => {
                         </div>
                     </div>
                     <div className="col-lg-6">
-
                     </div>
                 </div>
             </div>

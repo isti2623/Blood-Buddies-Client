@@ -1,6 +1,6 @@
 .banner-vol{
     background-image: url('../../../images/volunteer-bg.jpg');
-    height: 950px;
+    height: 1000px;
     width: 100%;
     background-blend-mode: overlay;
     background-repeat: no-repeat;
@@ -14,7 +14,7 @@
         margin-top: -110px;
     }
     .custom-button-pad {
-        margin-top: 100px;
-        margin-left: 37px;
+        margin-top: 40px;
+        margin-left: 80px;
     }
   

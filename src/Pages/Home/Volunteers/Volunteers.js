@@ -24,7 +24,7 @@ const Volunteers = () => {
                 <div className='container custom-card-pad'>
                     <div className="row">
                         <div className="col-lg-4">
-                            <Card className=' shadow' style={{ width: '18rem' }}>
+                            <Card className=' shadow m-2' >
                                 <Card.Img variant="top" src={teamOne} />
                                 <Card.Body>
                                     <Card.Title className='fw-bold'>ALEXANDER GARY
@@ -36,7 +36,7 @@ const Volunteers = () => {
                             </Card>
                         </div>
                         <div className="col-lg-4">
-                            <Card className=' shadow' style={{ width: '18rem' }}>
+                            <Card className=' shadow m-2'>
                                 <Card.Img variant="top" src={teamTwo} />
                                 <Card.Body>
                                     <Card.Title className='fw-bold'>MELISSA MUNOZ</Card.Title>
@@ -47,7 +47,7 @@ const Volunteers = () => {
                             </Card>
                         </div>
                         <div className="col-lg-4">
-                            <Card className=' shadow' style={{ width: '18rem' }}>
+                            <Card className=' shadow m-2'>
                                 <Card.Img variant="top" src={teamThree} />
                                 <Card.Body>
                                     <Card.Title className='fw-bold'>JOHN ABRAHAM</Card.Title>

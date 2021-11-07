@@ -1,8 +1,8 @@
 import React from 'react';
+import Footer from '../../Shared/Footer/Footer';
 import Navigation from '../../Shared/Navigation/Navigation';
 import TopHeader from '../../Shared/TopHeader/TopHeader';
 import Banner from '../Banner/Banner';
-import BecomePart from '../BecomePart/BecomePart';
 import HelpfullInfo from '../HelpfullInfo/HelpfullInfo';
 import HomeCampaign from '../HomeCampaign/HomeCampaign';
 import JoinWithUs from '../JoinWithUs/JoinWithUs';
@@ -22,7 +22,7 @@ const Home = () => {
             <HelpfullInfo></HelpfullInfo>
             <Success></Success>
             <Volunteers></Volunteers>
-            <BecomePart></BecomePart>
+            <Footer></Footer>
         </div>
     );
 };

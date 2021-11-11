@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Container, Nav, Navbar, Button } from 'react-bootstrap';
 import logo from '../../../images/logo.png'
 import { Link, NavLink } from 'react-router-dom';
 
@@ -13,7 +13,7 @@ const Navigation = () => {
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="ms-auto">
                             <NavLink
-                                className='ms-4 text-decoration-none text-dark'
+                                className='ms-4 text-decoration-none text-dark mt-3'
                                 to="/home"
                                 activeStyle={{
                                     fontWeight: "bold",
@@ -23,7 +23,7 @@ const Navigation = () => {
                                 HOME
                             </NavLink>
                             <NavLink
-                                className='ms-4 text-decoration-none text-dark'
+                                className='ms-4 text-decoration-none text-dark mt-3'
                                 to="/about"
                                 activeStyle={{
                                     fontWeight: "bold",
@@ -33,7 +33,7 @@ const Navigation = () => {
                                 ABOUT US
                             </NavLink>
                             <NavLink
-                                className='ms-4 text-decoration-none text-dark'
+                                className='ms-4 text-decoration-none text-dark mt-3'
                                 to="/campaign"
                                 activeStyle={{
                                     fontWeight: "bold",
@@ -43,7 +43,7 @@ const Navigation = () => {
                                 CAMPAIGN
                             </NavLink>
                             <NavLink
-                                className='ms-4 text-decoration-none text-dark'
+                                className='ms-4 text-decoration-none text-dark mt-3'
                                 to="/needDoners"
                                 activeStyle={{
                                     fontWeight: "bold",
@@ -53,7 +53,7 @@ const Navigation = () => {
                                 NEED DONERS
                             </NavLink>
                             <NavLink
-                                className='ms-4 text-decoration-none text-dark'
+                                className='ms-4 text-decoration-none text-dark mt-3'
                                 to="/addBloodRequest"
                                 activeStyle={{
                                     fontWeight: "bold",
@@ -63,7 +63,7 @@ const Navigation = () => {
                                 ADD BLOOD REQUEST
                             </NavLink>
                             <NavLink
-                                className='ms-4 text-decoration-none text-dark'
+                                className='ms-4 text-decoration-none text-dark mt-3'
                                 to="/blog"
                                 activeStyle={{
                                     fontWeight: "bold",
@@ -73,7 +73,7 @@ const Navigation = () => {
                                 BLOG
                             </NavLink>
                             <NavLink
-                                className='ms-4 text-decoration-none text-dark'
+                                className='ms-4 text-decoration-none text-dark mt-3'
                                 to="/contact"
                                 activeStyle={{
                                     fontWeight: "bold",
@@ -82,6 +82,10 @@ const Navigation = () => {
                             >
                                 CONTACT
                             </NavLink>
+                            <div>
+                                <Link to='/login'><Button className='ms-5 mb-3 mt-1' variant="danger">Login</Button></Link>
+                            </div>
+
 
                         </Nav>
                     </Navbar.Collapse>

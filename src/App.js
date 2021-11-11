@@ -12,6 +12,7 @@ import AddBloodRequest from './Pages/AddBloodRequest/AddBloodRequest/AddBloodReq
 import Blog from './Pages/Blog/Blog/Blog';
 import Contact from './Pages/Contact/Contact/Contact';
 import NoResult from './Pages/NoResult/NoResult/NoResult';
+import Login from './Pages/Login/Login';
 
 
 function App() {
@@ -42,6 +43,9 @@ function App() {
           </Route>
           <Route path='/contact'>
             <Contact />
+          </Route>
+          <Route path='/login'>
+            <Login />
           </Route>
           <Route path='*'>
             <NoResult />

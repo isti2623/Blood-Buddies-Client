@@ -53,10 +53,11 @@ const Login = () => {
                                     onBlur={handleOnBlur}
                                 />
                             </Form.Group>
-                            <NavLink className='text-decoration-none' to='/register'><p className='text-danger'>New User ? Please Register</p></NavLink>
+
                             <Button variant="danger" type="submit">
                                 Login
                             </Button>
+                            <NavLink className='text-decoration-none' to='/register'><p className='text-danger mt-3'>New User ? Please Register</p></NavLink>
                         </Form>
 
                     </div>

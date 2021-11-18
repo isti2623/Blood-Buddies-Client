@@ -78,10 +78,11 @@ const Register = () => {
                                 />
                             </Form.Group>
 
-                            <NavLink className='text-decoration-none' to='/login'><p className='text-danger'>Already Register?Please Login</p></NavLink>
+
                             <Button variant="danger" type="submit">
                                 Register
                             </Button>
+                            <NavLink className='text-decoration-none' to='/login'><p className='text-danger mt-3'>Already Register?Please Login</p></NavLink>
                         </Form>
 
                     </div>

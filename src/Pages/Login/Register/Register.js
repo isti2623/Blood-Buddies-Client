@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Form, Button, Spinner } from 'react-bootstrap';
+import { Form, Button, Spinner, Alert } from 'react-bootstrap';
 
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
@@ -7,7 +7,7 @@ import Navigation from '../../Shared/Navigation/Navigation';
 
 const Register = () => {
     const [loginData, setLoginData] = useState({});
-    const { registerUser, isLoading } = useAuth();
+    const { user, registerUser, isLoading, authError } = useAuth();
 
     const handleOnBlur = e => {
         const field = e.target.name;
@@ -92,6 +92,16 @@ const Register = () => {
                             <div className='text-center'>
                                 <Spinner animation="border" variant="danger" />
                             </div>
+                        }
+                        {
+                            user.email && <Alert variant='success'>
+                                User Created Successfully
+                            </Alert>
+                        }
+                        {
+                            authError && <Alert variant='danger'>
+                                {authError}
+                            </Alert>
                         }
 
                     </div>

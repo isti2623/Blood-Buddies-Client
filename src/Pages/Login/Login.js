@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button, Spinner, Alert } from 'react-bootstrap';
 import Navigation from '../Shared/Navigation/Navigation';
 import login from '../../images/login.jpg'
 import { NavLink } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 
 const Login = () => {
     const [loginData, setLoginData] = useState({});
+
+    const { user, loginUser, isLoading, authError } = useAuth();
+
     const handleOnBlur = e => {
         const field = e.target.name;
         const value = e.target.value;
@@ -15,7 +19,7 @@ const Login = () => {
     }
 
     const handleLoginSubmit = e => {
-        alert('hello')
+        loginUser(loginData.email, loginData.password);
         e.preventDefault();
     }
     return (
@@ -59,6 +63,22 @@ const Login = () => {
                             </Button>
                             <NavLink className='text-decoration-none' to='/register'><p className='text-danger mt-3'>New User ? Please Register</p></NavLink>
                         </Form>
+
+                        {isLoading &&
+                            <div className='text-center'>
+                                <Spinner animation="border" variant="danger" />
+                            </div>
+                        }
+                        {
+                            user.email && <Alert variant='success'>
+                                User login Successfully
+                            </Alert>
+                        }
+                        {
+                            authError && <Alert variant='danger'>
+                                {authError}
+                            </Alert>
+                        }
 
                     </div>
                     <div className="col-lg-6">

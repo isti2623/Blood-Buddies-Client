@@ -10,6 +10,7 @@ import Contact from './Pages/Contact/Contact/Contact';
 import NoResult from './Pages/NoResult/NoResult/NoResult';
 import Login from './Pages/Login/Login';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Register from './Pages/Login/Register/Register';
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           <Route path="*" element={<NoResult />} />
         </Routes>
       </BrowserRouter>

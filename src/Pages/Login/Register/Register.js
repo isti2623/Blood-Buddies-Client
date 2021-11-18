@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button, Spinner } from 'react-bootstrap';
 
 import { NavLink } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 import Navigation from '../../Shared/Navigation/Navigation';
 
 const Register = () => {
     const [loginData, setLoginData] = useState({});
+    const { registerUser, isLoading } = useAuth();
 
     const handleOnBlur = e => {
         const field = e.target.name;
@@ -20,6 +22,7 @@ const Register = () => {
             alert('your password didnot match');
             return;
         }
+        registerUser(loginData.email, loginData.password);
         e.preventDefault();
     }
     return (
@@ -30,7 +33,7 @@ const Register = () => {
                     <div className="col-lg-6">
                         <h2 className='mt-5 text-danger fw-bold fs-1 ms-5'>Register</h2>
                         <hr className='w-50 ms-5 mb-5' />
-                        <Form onSubmit={handleLoginSubmit} className='w-50 my-5 ms-5'>
+                        {!isLoading && <Form onSubmit={handleLoginSubmit} className='w-50 my-5 ms-5'>
                             <Form.Group className="mb-3">
                                 <Form.Label>User Name</Form.Label>
                                 <Form.Control
@@ -83,7 +86,13 @@ const Register = () => {
                                 Register
                             </Button>
                             <NavLink className='text-decoration-none' to='/login'><p className='text-danger mt-3'>Already Register?Please Login</p></NavLink>
-                        </Form>
+                        </Form>}
+
+                        {isLoading &&
+                            <div className='text-center'>
+                                <Spinner animation="border" variant="danger" />
+                            </div>
+                        }
 
                     </div>
                     <div className="col-lg-6">

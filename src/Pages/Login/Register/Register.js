@@ -6,6 +6,7 @@ import Navigation from '../../Shared/Navigation/Navigation';
 
 const Register = () => {
     const [loginData, setLoginData] = useState({});
+
     const handleOnBlur = e => {
         const field = e.target.name;
         const value = e.target.value;
@@ -15,7 +16,10 @@ const Register = () => {
     }
 
     const handleLoginSubmit = e => {
-        alert('hello')
+        if (loginData.password !== loginData.password2) {
+            alert('your password didnot match');
+            return;
+        }
         e.preventDefault();
     }
     return (
@@ -73,6 +77,7 @@ const Register = () => {
                                     onBlur={handleOnBlur}
                                 />
                             </Form.Group>
+
                             <NavLink className='text-decoration-none' to='/login'><p className='text-danger'>Already Register?Please Login</p></NavLink>
                             <Button variant="danger" type="submit">
                                 Register

@@ -2,8 +2,10 @@ import React from 'react';
 import { Container, Nav, Navbar, Button } from 'react-bootstrap';
 import logo from '../../../images/logo.png'
 import { Link, NavLink } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 
 const Navigation = () => {
+    const { user, logOut } = useAuth();
     return (
         <div>
             <Navbar sticky="top" collapseOnSelect expand="lg" bg='light' variant="light">
@@ -83,7 +85,12 @@ const Navigation = () => {
                                 CONTACT
                             </NavLink>
                             <div>
-                                <Link to='/login'><Button className='ms-5 mb-3 mt-1' variant="danger">Login</Button></Link>
+                                {
+                                    user?.email ?
+                                        <Button onClick={logOut} className='ms-5 mb-3 mt-1' variant="danger">Logout</Button>
+                                        :
+                                        <Link to='/login'><Button className='ms-5 mb-3 mt-1' variant="danger">Login</Button></Link>
+                                }
                             </div>
 
 

@@ -11,27 +11,29 @@ import NoResult from './Pages/NoResult/NoResult/NoResult';
 import Login from './Pages/Login/Login';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Register from './Pages/Login/Register/Register';
+import AuthProvider from './contexts/AuthProvider/AuthProvider';
 
 
 function App() {
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/needDoners" element={<NeedDoners />} />
-          <Route path="/campaign" element={<Campaign />} />
-          <Route path="/addBloodRequest" element={<AddBloodRequest />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="*" element={<NoResult />} />
-        </Routes>
-      </BrowserRouter>
-
+      <AuthProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/needDoners" element={<NeedDoners />} />
+            <Route path="/campaign" element={<Campaign />} />
+            <Route path="/addBloodRequest" element={<AddBloodRequest />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="*" element={<NoResult />} />
+          </Routes>
+        </BrowserRouter>
+      </AuthProvider>
     </>
   );
 }

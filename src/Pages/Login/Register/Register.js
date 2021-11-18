@@ -4,6 +4,7 @@ import { Form, Button, Spinner, Alert } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import Navigation from '../../Shared/Navigation/Navigation';
+import TopHeader from '../../Shared/TopHeader/TopHeader';
 
 const Register = () => {
     const [loginData, setLoginData] = useState({});
@@ -27,6 +28,7 @@ const Register = () => {
     }
     return (
         <div>
+            <TopHeader></TopHeader>
             <Navigation></Navigation>
             <div className="container">
                 <div className="row">

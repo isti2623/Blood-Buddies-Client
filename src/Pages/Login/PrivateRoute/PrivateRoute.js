@@ -6,7 +6,11 @@ import useAuth from '../../../hooks/useAuth';
 const PrivateRoute = ({ children }) => {
     const { user, isLoading } = useAuth();
     let location = useLocation();
-    if (isLoading) { return <Spinner animation="border" variant="danger" /> }
+    if (isLoading) {
+        return <div className='text-center'>
+            <Spinner animation="border" variant="danger" />
+        </div>
+    }
 
 
     if (!user.email) {

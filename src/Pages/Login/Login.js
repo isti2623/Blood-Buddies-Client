@@ -2,13 +2,17 @@ import React, { useState } from 'react';
 import { Form, Button, Spinner, Alert } from 'react-bootstrap';
 import Navigation from '../Shared/Navigation/Navigation';
 import login from '../../images/login.jpg'
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
+import TopHeader from '../Shared/TopHeader/TopHeader';
 
 const Login = () => {
     const [loginData, setLoginData] = useState({});
 
     const { user, loginUser, isLoading, authError } = useAuth();
+
+    let navigate = useNavigate();
+    let location = useLocation();
 
     const handleOnBlur = e => {
         const field = e.target.name;
@@ -19,11 +23,12 @@ const Login = () => {
     }
 
     const handleLoginSubmit = e => {
-        loginUser(loginData.email, loginData.password);
+        loginUser(loginData.email, loginData.password, navigate, location);
         e.preventDefault();
     }
     return (
         <div>
+            <TopHeader></TopHeader>
             <Navigation></Navigation>
 
 

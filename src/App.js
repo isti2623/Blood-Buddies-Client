@@ -1,9 +1,5 @@
 import './App.css';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
+
 import Home from './Pages/Home/Home/Home';
 import About from './Pages/About/About/About';
 import Campaign from './Pages/Campaign/Campaign/Campaign';
@@ -13,47 +9,28 @@ import Blog from './Pages/Blog/Blog/Blog';
 import Contact from './Pages/Contact/Contact/Contact';
 import NoResult from './Pages/NoResult/NoResult/NoResult';
 import Login from './Pages/Login/Login';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 
 function App() {
   return (
-    <div>
-      <Router>
-        <Switch>
-          <Route exact path='/'>
-            <Home />
-          </Route>
-          <Route path='/home'>
-            <Home />
-          </Route>
-          <Route path='/about'>
-            <About />
-          </Route>
-          <Route path='/campaign'>
-            <Campaign />
-          </Route>
-          <Route path='/needDoners'>
-            <NeedDoners />
-          </Route>
-          <Route path='/addBloodRequest'>
-            <AddBloodRequest />
-          </Route>
-          <Route path='/blog'>
-            <Blog />
-          </Route>
-          <Route path='/contact'>
-            <Contact />
-          </Route>
-          <Route path='/login'>
-            <Login />
-          </Route>
-          <Route path='*'>
-            <NoResult />
-          </Route>
-        </Switch>
-      </Router>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/needDoners" element={<NeedDoners />} />
+          <Route path="/campaign" element={<Campaign />} />
+          <Route path="/addBloodRequest" element={<AddBloodRequest />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="*" element={<NoResult />} />
+        </Routes>
+      </BrowserRouter>
 
-    </div>
+    </>
   );
 }
 

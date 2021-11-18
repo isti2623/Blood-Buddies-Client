@@ -12,6 +12,7 @@ import Login from './Pages/Login/Login';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Register from './Pages/Login/Register/Register';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
+import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 
 
 function App() {
@@ -23,7 +24,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/needDoners" element={<NeedDoners />} />
+            <Route path="/needDoners" element={<PrivateRoute><NeedDoners /></PrivateRoute>} />
             <Route path="/campaign" element={<Campaign />} />
             <Route path="/addBloodRequest" element={<AddBloodRequest />} />
             <Route path="/blog" element={<Blog />} />

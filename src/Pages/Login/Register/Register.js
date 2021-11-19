@@ -26,13 +26,13 @@ const Register = () => {
             alert('your password didnot match');
             return;
         }
-        registerUser(loginData.email, loginData.password, loginData.name, location, navigate);
+        registerUser(loginData.email, loginData.password, loginData.name, navigate, location);
         e.preventDefault();
     }
 
 
     const handleGoogleSignIn = () => {
-        signInWithGoogle(location, navigate);
+        signInWithGoogle(navigate, location);
     }
 
 

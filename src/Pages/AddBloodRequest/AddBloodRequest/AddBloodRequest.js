@@ -1,11 +1,15 @@
-import React from 'react';
-import { Form, Button, NavDropdown } from 'react-bootstrap';
+import { Form, Button } from 'react-bootstrap';
 import useAuth from '../../../hooks/useAuth';
 import Navigation from '../../Shared/Navigation/Navigation';
 import TopHeader from '../../Shared/TopHeader/TopHeader';
+import React, { useState } from "react";
+import DatePicker from "react-datepicker";
+
+import "react-datepicker/dist/react-datepicker.css";
 
 const AddBloodRequest = () => {
     const { user } = useAuth();
+    const [startDate, setStartDate] = useState(new Date());
     return (
         <div>
             <TopHeader></TopHeader>
@@ -55,6 +59,8 @@ const AddBloodRequest = () => {
                     <Form.Label>Extra Contact Number?</Form.Label>
                     <Form.Control placeholder='Extra Contact Number' as="textarea" rows={2} />
                 </Form.Group>
+                <Form.Label>When Needed?</Form.Label>
+                <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
 
                 <Button className='mt-3' variant="danger" type="submit">
                     Submit

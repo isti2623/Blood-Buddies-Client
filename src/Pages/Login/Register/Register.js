@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
 import { Form, Button, Spinner, Alert } from 'react-bootstrap';
 
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import Navigation from '../../Shared/Navigation/Navigation';
 import TopHeader from '../../Shared/TopHeader/TopHeader';
 
 const Register = () => {
     const [loginData, setLoginData] = useState({});
-    const { user, registerUser, isLoading, authError } = useAuth();
+    const { user, registerUser, isLoading, authError, signInWithGoogle } = useAuth();
+
+    let navigate = useNavigate();
+    let location = useLocation();
 
     const handleOnBlur = e => {
         const field = e.target.name;
@@ -26,6 +29,13 @@ const Register = () => {
         registerUser(loginData.email, loginData.password);
         e.preventDefault();
     }
+
+
+    const handleGoogleSignIn = () => {
+        signInWithGoogle(location, navigate);
+    }
+
+
     return (
         <div>
             <TopHeader></TopHeader>
@@ -89,6 +99,11 @@ const Register = () => {
                             </Button>
                             <NavLink className='text-decoration-none' to='/login'><p className='text-danger mt-3'>Already Register?Please Login</p></NavLink>
                         </Form>}
+
+                        <p className='ms-5'>-------------------------------------------</p>
+
+                        <Button className='ms-5 mb-3' onClick={signInWithGoogle} variant="danger">Google Sign In</Button>
+
 
                         {isLoading &&
                             <div className='text-center'>

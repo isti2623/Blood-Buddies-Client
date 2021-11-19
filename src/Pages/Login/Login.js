@@ -9,7 +9,7 @@ import TopHeader from '../Shared/TopHeader/TopHeader';
 const Login = () => {
     const [loginData, setLoginData] = useState({});
 
-    const { user, loginUser, isLoading, authError } = useAuth();
+    const { user, loginUser, isLoading, authError, signInWithGoogle } = useAuth();
 
     let navigate = useNavigate();
     let location = useLocation();
@@ -26,6 +26,13 @@ const Login = () => {
         loginUser(loginData.email, loginData.password, navigate, location);
         e.preventDefault();
     }
+
+
+    const handleGoogleSignIn = () => {
+        signInWithGoogle(location, navigate);
+    }
+
+
     return (
         <div>
             <TopHeader></TopHeader>
@@ -68,6 +75,10 @@ const Login = () => {
                             </Button>
                             <NavLink className='text-decoration-none' to='/register'><p className='text-danger mt-3'>New User ? Please Register</p></NavLink>
                         </Form>
+
+                        <p className='ms-5'>-------------------------------------------</p>
+
+                        <Button className='ms-5 mb-3' onClick={signInWithGoogle} variant="danger">Google Sign In</Button>
 
                         {isLoading &&
                             <div className='text-center'>

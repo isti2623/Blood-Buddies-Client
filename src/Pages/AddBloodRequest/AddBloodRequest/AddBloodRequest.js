@@ -16,8 +16,8 @@ const AddBloodRequest = () => {
             <Navigation></Navigation>
             <Form className='w-50 my-5 ms-5'>
                 <Form.Group className="mb-3">
-                    <Form.Label>Patient Name</Form.Label>
-                    <Form.Control type="text" placeholder={user.displayName} />
+                    <Form.Label>Name</Form.Label>
+                    <Form.Control type="text" value={user.displayName} />
                 </Form.Group>
 
                 <Form.Group className="mb-3">

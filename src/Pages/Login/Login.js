@@ -78,7 +78,7 @@ const Login = () => {
 
                         <p className='ms-5'>-------------------------------------------</p>
 
-                        <Button className='ms-5 mb-3' onClick={signInWithGoogle} variant="danger">Google Sign In</Button>
+                        <Button className='ms-5 mb-3' onClick={handleGoogleSignIn} variant="danger">Google Sign In</Button>
 
                         {isLoading &&
                             <div className='text-center'>

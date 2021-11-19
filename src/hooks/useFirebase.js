@@ -17,8 +17,8 @@ const useFirebase = () => {
         setIsLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                /*  let from = location?.state?.from?.pathname || "/";
-                 navigate(from, { replace: true }); */
+                /* let from = location?.state?.from?.pathname || "/";
+                navigate(from, { replace: true }); */
                 const newUser = { email, displayName: name };
                 setUser(newUser);
                 //send name to firebase after creation
@@ -62,7 +62,8 @@ const useFirebase = () => {
         setIsLoading(true);
         signInWithPopup(auth, googleProvider)
             .then((result) => {
-
+                /*   let from = location?.state?.from?.pathname || "/";
+                  navigate(from, { replace: true }); */
                 setAuthError('');
                 const user = result.user;
 

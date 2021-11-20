@@ -10,9 +10,10 @@ import "react-datepicker/dist/react-datepicker.css";
 const AddBloodRequest = () => {
     const { user } = useAuth();
 
-    const initialInfo = { patientName: user.displayName, age: '', bloodGroup: '', numBlood: '', details: '', contact: '', date: '' }
+    const initialInfo = { patientName: user.displayName, age: '', bloodGroup: '', numBlood: '', details: '', contact: '' }
     const [bloodReq, setBloodReq] = useState(initialInfo);
     const [startDate, setStartDate] = useState(new Date());
+
 
 
 
@@ -22,12 +23,17 @@ const AddBloodRequest = () => {
         const value = e.target.value;
         const newLoginData = { ...bloodReq };
         newLoginData[field] = value;
-        console.log(newLoginData)
+        //console.log(newLoginData)
         setBloodReq(newLoginData);
     }
 
     const handleBloodReqSubmit = e => {
-
+        e.preventDefault();
+        console.log(startDate);
+        const data = { ...bloodReq }
+        console.log(data)
+        setBloodReq(data);
+        console.log(bloodReq);
 
     }
 
@@ -37,7 +43,7 @@ const AddBloodRequest = () => {
         <div>
             <TopHeader></TopHeader>
             <Navigation></Navigation>
-            <Form className='w-50 my-5 ms-5'>
+            <Form onSubmit={handleBloodReqSubmit} className='w-50 my-5 ms-5'>
                 <Form.Group className="mb-3">
                     <Form.Label>Name</Form.Label>
                     <Form.Control
@@ -110,9 +116,9 @@ const AddBloodRequest = () => {
                 <DatePicker
                     selected={startDate}
                     name="date"
-                    onBlur={(date) => setStartDate(date)} />
+                    onChange={(date) => setBloodReq({ ...bloodReq, date: date.toDateString() })} />
 
-                <Button onClick={handleBloodReqSubmit} className='mt-3' variant="danger" type="submit">
+                <Button className='mt-3' variant="danger" type="submit">
                     Submit
                 </Button>
             </Form>

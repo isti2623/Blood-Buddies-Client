@@ -1,12 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Navigation from '../../Shared/Navigation/Navigation';
 import TopHeader from '../../Shared/TopHeader/TopHeader';
+import SingleDoner from '../SingleDoner/SingleDoner';
 
 const NeedDoners = () => {
+    const [doners, setDoners] = useState([]);
+    useEffect(() => {
+        fetch("http://localhost:5000/bloodPostReq")
+            .then(res => res.json())
+            .then(data => setDoners(data))
+    }, [])
     return (
         <div>
             <TopHeader></TopHeader>
             <Navigation></Navigation>
+            <div className="row">
+                {
+                    doners.map(doner => <SingleDoner
+                        key={doner._id}
+                        doner={doner}
+                    >
+                    </SingleDoner>)
+                }
+            </div>
         </div>
     );
 };

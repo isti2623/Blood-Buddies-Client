@@ -5,7 +5,7 @@ import './SingleDoner.css'
 const SingleDoner = (props) => {
     const { patientName, age, bloodGroup, numBlood, details, contact, date } = props.doner;
     return (
-        <div className='doner'>
+        <div className='doner my-5'>
             <div className="container  card my-3 ms-5">
                 <div className='d-flex'>
                     <div className="col-lg-2">

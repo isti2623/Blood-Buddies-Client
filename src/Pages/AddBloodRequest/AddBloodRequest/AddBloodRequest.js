@@ -9,7 +9,30 @@ import "react-datepicker/dist/react-datepicker.css";
 
 const AddBloodRequest = () => {
     const { user } = useAuth();
+
+    const initialInfo = { patientName: user.displayName, age: '', bloodGroup: '', numBlood: '', details: '', contact: '', date: '' }
+    const [bloodReq, setBloodReq] = useState(initialInfo);
     const [startDate, setStartDate] = useState(new Date());
+
+
+
+
+    const handleOnBlur = e => {
+        const field = e.target.name;
+        const value = e.target.value;
+        const newLoginData = { ...bloodReq };
+        newLoginData[field] = value;
+        console.log(newLoginData)
+        setBloodReq(newLoginData);
+    }
+
+    const handleBloodReqSubmit = e => {
+
+
+    }
+
+
+
     return (
         <div>
             <TopHeader></TopHeader>
@@ -17,52 +40,79 @@ const AddBloodRequest = () => {
             <Form className='w-50 my-5 ms-5'>
                 <Form.Group className="mb-3">
                     <Form.Label>Name</Form.Label>
-                    <Form.Control type="text" value={user.displayName} />
+                    <Form.Control
+                        type="text"
+                        name="patientName"
+                        onBlur={handleOnBlur}
+                        defaultValue={user.displayName}
+                    />
                 </Form.Group>
 
                 <Form.Group className="mb-3">
                     <Form.Label>Patient Age</Form.Label>
-                    <Form.Control type="number" placeholder='Patient Age' />
+
+                    <Form.Control
+                        type="number"
+                        name='age'
+                        onBlur={handleOnBlur}
+                        placeholder='Patient Age' />
                 </Form.Group>
 
 
 
                 <Form.Label>Blood Group</Form.Label>
-                <Form.Select aria-label="Default select example">
+                <Form.Select
+                    onBlur={handleOnBlur}
+                    name='bloodGroup'
+                    aria-label="Default select example">
                     <option>Select</option>
-                    <option value="1">A+</option>
-                    <option value="2">A-</option>
-                    <option value="3">B+</option>
-                    <option value="4">B-</option>
-                    <option value="5">O+</option>
-                    <option value="6">O-</option>
-                    <option value="7">AB+</option>
-                    <option value="8">AB-</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
                 </Form.Select>
 
                 <Form.Label className='my-3'>Number of Bags</Form.Label>
-                <Form.Select aria-label="Default select example">
-                    <option>1</option>
-                    <option value="1">2</option>
-                    <option value="2">3</option>
-                    <option value="3">4</option>
-                    <option value="3">5</option>
-                    <option value="3">6</option>
+                <Form.Select
+                    onBlur={handleOnBlur}
+                    name='numBlood'
+                    aria-label="Default select example">
+                    <option name='numone'>1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
                 </Form.Select>
 
                 <Form.Group className="mb-3   mt-3">
                     <Form.Label>Why is blood needed?</Form.Label>
-                    <Form.Control placeholder='Why is blood needed?' as="textarea" rows={3} />
+                    <Form.Control
+                        placeholder='Why is blood needed?'
+                        onBlur={handleOnBlur}
+                        name='details'
+                        as="textarea"
+                        rows={3} />
                 </Form.Group>
 
                 <Form.Group className="mb-3   mt-3">
                     <Form.Label>Extra Contact Number?</Form.Label>
-                    <Form.Control placeholder='Extra Contact Number' as="textarea" rows={2} />
+                    <Form.Control placeholder='Extra Contact Number'
+                        as="textarea"
+                        onBlur={handleOnBlur}
+                        name='contact'
+                        rows={2} />
                 </Form.Group>
                 <Form.Label>When Needed?</Form.Label>
-                <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
+                <DatePicker
+                    selected={startDate}
+                    name="date"
+                    onBlur={(date) => setStartDate(date)} />
 
-                <Button className='mt-3' variant="danger" type="submit">
+                <Button onClick={handleBloodReqSubmit} className='mt-3' variant="danger" type="submit">
                     Submit
                 </Button>
             </Form>

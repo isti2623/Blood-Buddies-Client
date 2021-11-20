@@ -59,7 +59,7 @@ const AddBloodRequest = () => {
             <div className="col-md-8 add-blood">
                 <Form onSubmit={handleBloodReqSubmit} className='w-50 my-5 ms-5'>
                     <Form.Group className="mb-3">
-                        <Form.Label>Name</Form.Label>
+                        <Form.Label className="text-danger fw-bold">Name</Form.Label>
                         <Form.Control
                             required
                             type="text"
@@ -70,7 +70,7 @@ const AddBloodRequest = () => {
                     </Form.Group>
 
                     <Form.Group className="mb-3">
-                        <Form.Label>Patient Age</Form.Label>
+                        <Form.Label className="text-danger fw-bold">Patient Age</Form.Label>
 
                         <Form.Control
                             required
@@ -82,7 +82,7 @@ const AddBloodRequest = () => {
 
 
 
-                    <Form.Label>Blood Group</Form.Label>
+                    <Form.Label className="text-danger fw-bold">Blood Group</Form.Label>
                     <Form.Select
                         onBlur={handleOnBlur}
                         name='bloodGroup'
@@ -99,7 +99,7 @@ const AddBloodRequest = () => {
                         <option value="AB-">AB-</option>
                     </Form.Select>
 
-                    <Form.Label className='my-3'>Number of Bags</Form.Label>
+                    <Form.Label className='my-3 text-danger fw-bold'>Number of Bags</Form.Label>
                     <Form.Select
                         onBlur={handleOnBlur}
                         name='numBlood'
@@ -112,7 +112,7 @@ const AddBloodRequest = () => {
                         <option value="5">5</option>
                     </Form.Select>
 
-                    <Form.Group className="mb-3   mt-3">
+                    <Form.Group className="mb-3 text-danger  fw-bold mt-3">
                         <Form.Label>Why is blood needed?</Form.Label>
                         <Form.Control
                             placeholder='Why is blood needed?'
@@ -123,7 +123,7 @@ const AddBloodRequest = () => {
                             rows={3} />
                     </Form.Group>
 
-                    <Form.Group className="mb-3   mt-3">
+                    <Form.Group className="mb-3 text-danger  fw-bold mt-3">
                         <Form.Label>Contact Number and Address?</Form.Label>
                         <Form.Control placeholder='01322308092 , Mirpur-1,Dhaka-1216'
                             as="textarea"
@@ -132,14 +132,15 @@ const AddBloodRequest = () => {
                             name='contact'
                             rows={2} />
                     </Form.Group>
-                    <Form.Label>When Needed?</Form.Label>
+                    <Form.Label className="text-danger fw-bold">When Needed?</Form.Label>
                     <DatePicker
+                        value={bloodReq.date}
                         selected={startDate}
                         name="date"
                         onChange={(date) => setBloodReq({ ...bloodReq, date: date.toDateString() })} />
 
                     <Button className='mt-3' variant="danger" type="submit">
-                        Submit
+                        Share Post
                     </Button>
                     {
                         bloodSuccess && <Alert className='mt-3' variant='success'>

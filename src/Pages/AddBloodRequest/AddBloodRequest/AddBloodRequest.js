@@ -125,7 +125,7 @@ const AddBloodRequest = () => {
 
                     <Form.Group className="mb-3   mt-3">
                         <Form.Label>Contact Number and Address?</Form.Label>
-                        <Form.Control placeholder='Contact Number and Address'
+                        <Form.Control placeholder='01322308092 , Mirpur-1,Dhaka-1216'
                             as="textarea"
                             onBlur={handleOnBlur}
                             required

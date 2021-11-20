@@ -1,0 +1,12 @@
+.date{
+    background-color: rgb(192, 12, 12);
+    color: white;
+    padding: 15px;
+    font-weight: 900;
+}
+.date-card{
+    margin-left: 12px;
+}
+.doner{
+    margin-left: 220px;
+}

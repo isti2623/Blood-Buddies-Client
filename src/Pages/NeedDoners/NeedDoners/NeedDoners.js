@@ -14,15 +14,15 @@ const NeedDoners = () => {
         <div>
             <TopHeader></TopHeader>
             <Navigation></Navigation>
-            <div className="row">
-                {
-                    doners.map(doner => <SingleDoner
-                        key={doner._id}
-                        doner={doner}
-                    >
-                    </SingleDoner>)
-                }
-            </div>
+
+            {
+                doners.map(doner => <SingleDoner
+                    key={doner._id}
+                    doner={doner}
+                >
+                </SingleDoner>)
+            }
+
         </div>
     );
 };

@@ -9,7 +9,7 @@ const SingleDoner = (props) => {
             <div className="container  card my-3 ms-5">
                 <div className='d-flex'>
                     <div className="col-lg-2">
-                        <img src={avator} alt="" />
+                        <img className='mt-3' src={avator} alt="" />
 
                     </div>
 

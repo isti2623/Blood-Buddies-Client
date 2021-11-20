@@ -1,4 +1,4 @@
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button, Alert } from 'react-bootstrap';
 import useAuth from '../../../hooks/useAuth';
 import Navigation from '../../Shared/Navigation/Navigation';
 import TopHeader from '../../Shared/TopHeader/TopHeader';
@@ -9,6 +9,7 @@ import "react-datepicker/dist/react-datepicker.css";
 
 const AddBloodRequest = () => {
     const { user } = useAuth();
+    const [bloodSuccess, setBloodSuccess] = useState(false);
 
     const initialInfo = { patientName: user.displayName, age: '', bloodGroup: '', numBlood: '', details: '', contact: '' }
     const [bloodReq, setBloodReq] = useState(initialInfo);
@@ -23,17 +24,28 @@ const AddBloodRequest = () => {
         const value = e.target.value;
         const newLoginData = { ...bloodReq };
         newLoginData[field] = value;
-        //console.log(newLoginData)
         setBloodReq(newLoginData);
     }
 
     const handleBloodReqSubmit = e => {
         e.preventDefault();
-        console.log(startDate);
-        const data = { ...bloodReq }
-        console.log(data)
-        setBloodReq(data);
-        console.log(bloodReq);
+        const bloodPost = { ...bloodReq }
+        setBloodReq(bloodPost);
+        //send to server
+        fetch("http://localhost:5000/bloodPostReq", {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(bloodPost)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    setBloodSuccess(true);
+                }
+            })
+
 
     }
 
@@ -121,6 +133,11 @@ const AddBloodRequest = () => {
                 <Button className='mt-3' variant="danger" type="submit">
                     Submit
                 </Button>
+                {
+                    bloodSuccess && <Alert className='mt-3' variant='success'>
+                        Congratulations , Blood Request Posted
+                    </Alert>
+                }
             </Form>
         </div>
     );

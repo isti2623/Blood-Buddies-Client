@@ -2,7 +2,23 @@ import React from 'react';
 import avator from '../../../images/buddies_avator.png'
 
 const AdminDoner = (props) => {
-    const { patientName, age, bloodGroup, numBlood, details, contact, date } = props.doner;
+    const { patientName, age, bloodGroup, numBlood, details, contact, date, _id } = props.doner;
+
+    const { del, setDel } = props;
+    /* const [postDel, setPostDel] = useState(); */
+    const handleDeleteBlood = id => {
+        const url = `http://localhost:5000/bloodPostReq/${id}`
+        fetch(url, {
+            method: 'DELETE',
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.deletedCount > 0) {
+                    setDel(del + 1);
+                    alert('deleted successfully');
+                }
+            })
+    }
     return (
         <div className='doner my-5'>
             <div className="container  card my-3">
@@ -16,7 +32,7 @@ const AdminDoner = (props) => {
                         <h2 className='mt-3'><span className='text-danger fw-bold'>Name:</span> {patientName}</h2>
                         <h4 className='mt-3'><span className='text-danger fw-bold'>Age:</span> {age}</h4>
                         <h6 className='mt-3'><span className='text-danger fw-bold'>Details:</span> {details}</h6>
-                        <div className="btn btn-danger mb-2">DELETE</div>
+                        <div className="btn btn-danger mb-2" onClick={() => handleDeleteBlood(_id)} >DELETE</div>
 
                     </div>
                     <div className="col-md-4 mb-5 date-card">

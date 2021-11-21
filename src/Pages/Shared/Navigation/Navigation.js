@@ -34,36 +34,46 @@ const Navigation = () => {
                             >
                                 ABOUT US
                             </NavLink>
-                            <NavLink
-                                className='ms-4 text-decoration-none text-dark mt-3'
-                                to="/campaign"
-                                activeStyle={{
-                                    fontWeight: "bold",
-                                    color: "black"
-                                }}
-                            >
-                                CAMPAIGN
-                            </NavLink>
-                            <NavLink
-                                className='ms-4 text-decoration-none text-dark mt-3'
-                                to="/needDoners"
-                                activeStyle={{
-                                    fontWeight: "bold",
-                                    color: "black"
-                                }}
-                            >
-                                NEED DONERS
-                            </NavLink>
-                            <NavLink
-                                className='ms-4 text-decoration-none text-dark mt-3'
-                                to="/addBloodRequest"
-                                activeStyle={{
-                                    fontWeight: "bold",
-                                    color: "black"
-                                }}
-                            >
-                                ADD BLOOD REQUEST
-                            </NavLink>
+                            {
+                                user.email &&
+                                <NavLink
+                                    className='ms-4 text-decoration-none text-dark mt-3'
+                                    to="/campaign"
+                                    activeStyle={{
+                                        fontWeight: "bold",
+                                        color: "black"
+                                    }}
+                                >
+                                    CAMPAIGN
+                                </NavLink>
+                            }
+
+                            {
+                                user.email &&
+                                <NavLink
+                                    className='ms-4 text-decoration-none text-dark mt-3'
+                                    to="/needDoners"
+                                    activeStyle={{
+                                        fontWeight: "bold",
+                                        color: "black"
+                                    }}
+                                >
+                                    NEED DONERS
+                                </NavLink>
+                            }
+                            {
+                                user.email &&
+                                <NavLink
+                                    className='ms-4 text-decoration-none text-dark mt-3'
+                                    to="/addBloodRequest"
+                                    activeStyle={{
+                                        fontWeight: "bold",
+                                        color: "black"
+                                    }}
+                                >
+                                    ADD BLOOD REQUEST
+                                </NavLink>
+                            }
                             <NavLink
                                 className='ms-4 text-decoration-none text-dark mt-3'
                                 to="/blog"
@@ -84,6 +94,19 @@ const Navigation = () => {
                             >
                                 CONTACT
                             </NavLink>
+                            {
+                                user.email &&
+                                <NavLink
+                                    className='ms-4 text-decoration-none text-dark mt-3'
+                                    to="/dashboard"
+                                    activeStyle={{
+                                        fontWeight: "bold",
+                                        color: "black"
+                                    }}
+                                >
+                                    Dashboard
+                                </NavLink>
+                            }
                             <div>
                                 {
                                     user?.email ?

@@ -12,7 +12,7 @@ const AddBloodRequest = () => {
     const { user } = useAuth();
     const [bloodSuccess, setBloodSuccess] = useState(false);
 
-    const initialInfo = { patientName: user.displayName, age: '', bloodGroup: '', numBlood: '', details: '', contact: '' }
+    const initialInfo = { patientName: user.displayName, email: user.email, age: '', bloodGroup: '', numBlood: '', details: '', contact: '' }
     const [bloodReq, setBloodReq] = useState(initialInfo);
     const [startDate, setStartDate] = useState(new Date());
 
@@ -66,6 +66,18 @@ const AddBloodRequest = () => {
                             name="patientName"
                             onBlur={handleOnBlur}
                             defaultValue={user.displayName}
+                        />
+                    </Form.Group>
+
+                    <Form.Group className="mb-3">
+                        <Form.Label className="text-danger fw-bold">Email</Form.Label>
+                        <Form.Control
+                            required
+                            disabled
+                            type="text"
+                            name="email"
+                            onBlur={handleOnBlur}
+                            defaultValue={user.email}
                         />
                     </Form.Group>
 

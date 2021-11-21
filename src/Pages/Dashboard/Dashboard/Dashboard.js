@@ -18,6 +18,7 @@ import Typography from '@mui/material/Typography';
 import { red } from '@mui/material/colors';
 import { Grid } from '@mui/material';
 import MyPost from '../MyPost/MyPost';
+import { NavLink } from 'react-router-dom';
 
 
 
@@ -37,12 +38,17 @@ function Dashboard(props) {
             <Toolbar />
             <Divider />
             <List>
-                {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                    <ListItem button key={text}>
+                <NavLink
+                    className='ms-4 text-decoration-none text-dark mt-3'
+                    to="/"
+                    activeStyle={{
+                        fontWeight: "bold",
+                        color: "black"
+                    }}
+                >
+                    BACK TO HOME
+                </NavLink>
 
-                        <ListItemText primary={text} />
-                    </ListItem>
-                ))}
             </List>
 
 

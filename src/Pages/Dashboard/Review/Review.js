@@ -1,6 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import useAuth from '../../../hooks/useAuth';
+import './Review.css'
 
 const Review = () => {
     const { user } = useAuth();
@@ -54,7 +55,7 @@ const Review = () => {
                     {/* errors will return when field validation fails  */}
                     {errors.exampleRequired && <span>This field is required</span>}
                     <br />
-                    <input className='btn btn-warning ms-2' value='Add Review' type="submit" />
+                    <input className='btn btn-danger ms-5' value='Add Review' type="submit" />
                 </form>
             </div>
         </div>

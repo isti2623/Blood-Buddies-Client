@@ -8,19 +8,30 @@ import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
 
 import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
 
-import ListItemText from '@mui/material/ListItemText';
 
-import MenuIcon from '@mui/icons-material/Menu';
+
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { red } from '@mui/material/colors';
-import { Grid } from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
+
+
+
+import {
+    BrowserRouter as Router,
+    Routes,
+    Outlet,
+    Route,
+    Link,
+    useParams,
+    NavLink
+} from "react-router-dom";
+import DashboardHome from '../DashboardHome/DashboardHome';
+import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import MyPost from '../MyPost/MyPost';
-import { NavLink } from 'react-router-dom';
 
-
+import Review from '../Review/Review';
 
 
 const drawerWidth = 240;
@@ -28,6 +39,9 @@ const drawerWidth = 240;
 function Dashboard(props) {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
+
+
+
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
@@ -38,16 +52,17 @@ function Dashboard(props) {
             <Toolbar />
             <Divider />
             <List>
-                <NavLink
-                    className='ms-4 text-decoration-none text-dark mt-3'
-                    to="/"
-                    activeStyle={{
-                        fontWeight: "bold",
-                        color: "black"
-                    }}
-                >
-                    BACK TO HOME
-                </NavLink>
+                <Link to="/home">BACK TO HOME</Link>
+                <br />
+                <Link to="dashboardHome">DASHBOARD</Link>
+                <br />
+                <Link to="myPost">MY POST</Link>
+                <br />
+                <Link to="review">REVIEW</Link>
+                <br />
+                <Link to="makeAdmin">MAKE ADMIN</Link>
+
+
 
             </List>
 
@@ -121,9 +136,7 @@ function Dashboard(props) {
                 sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
             >
                 <Toolbar />
-                <Grid item xs={12}>
-                    <MyPost></MyPost>
-                </Grid>
+                <Outlet></Outlet>
             </Box>
         </Box >
     );

@@ -6,7 +6,7 @@ const SinPost = (props) => {
     const { patientName, age, bloodGroup, numBlood, details, contact, date } = props.post;
     return (
         <div className='doner my-5'>
-            <div className="container  card my-3 ms-5">
+            <div className="container  card my-3">
                 <div className='d-flex'>
                     <div className="col-lg-2">
                         <img className='mt-3' src={avator} alt="" />
@@ -17,6 +17,7 @@ const SinPost = (props) => {
                         <h2 className='mt-3'><span className='text-danger fw-bold'>Name:</span> {patientName}</h2>
                         <h4 className='mt-3'><span className='text-danger fw-bold'>Age:</span> {age}</h4>
                         <h6 className='mt-3'><span className='text-danger fw-bold'>Details:</span> {details}</h6>
+                        <div className="btn btn-danger">DELETE</div>
 
                     </div>
                     <div className="col-md-4 mb-5 date-card">
@@ -26,6 +27,7 @@ const SinPost = (props) => {
                         <h6 className='mt-2'><span className='text-danger fw-bold'>Contact:</span> {contact}</h6>
 
                     </div>
+
                 </div>
             </div>
         </div>

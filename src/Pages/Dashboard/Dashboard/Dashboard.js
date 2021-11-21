@@ -56,11 +56,13 @@ function Dashboard(props) {
                 <Link className='text-danger text-decoration-none fw-bold ms-5 mt-3' to="myPost">MY POST</Link>
                 <br /> <br />
                 <Link className='text-danger text-decoration-none fw-bold ms-5 mt-3' to="review">REVIEW</Link>
-                <br /> <br />
+                <br /> <br /> <br />
 
                 {
                     admin && <Box>
                         <Link className='text-danger text-decoration-none fw-bold ms-5 mt-3' to="makeAdmin">MAKE ADMIN</Link>
+                        <br /> <br />
+                        <Link className='text-danger text-decoration-none fw-bold ms-5 mt-3' to="manageUserPost">MANAGE USER POST</Link>
                     </Box>
                 }
 

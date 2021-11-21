@@ -17,6 +17,8 @@ import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import MyPost from './Pages/Dashboard/MyPost/MyPost';
 import Review from './Pages/Dashboard/Review/Review';
 import MakeAdmin from './Pages/Dashboard/MakeAdmin/MakeAdmin';
+import ManageUserPost from './Pages/Dashboard/ManageUserPost/ManageUserPost';
+import AdminRoute from './Pages/Login/AdminRoute/AdminRoute';
 
 
 function App() {
@@ -43,7 +45,10 @@ function App() {
               <Route path="review" element={<Review />}>
 
               </Route>
-              <Route path="makeAdmin" element={<MakeAdmin />}>
+              <Route path="makeAdmin" element={<AdminRoute><MakeAdmin /></AdminRoute>}>
+
+              </Route>
+              <Route path="manageUserPost" element={<AdminRoute><ManageUserPost /></AdminRoute>}>
 
               </Route>
             </Route>

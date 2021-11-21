@@ -28,7 +28,7 @@ const Review = () => {
     return (
         <div>
 
-            <h2 className='custom-h1 text-center mb-3'>Add Your Review</h2>
+            <h2 className='custom-h1 text-center text-danger mb-3'>Add Your Review</h2>
             <div className='form-part'>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     {/* register your input into the hook by invoking the "register" function */}

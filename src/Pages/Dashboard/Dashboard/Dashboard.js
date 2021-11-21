@@ -26,6 +26,7 @@ import {
     Link,
 
 } from "react-router-dom";
+import useAuth from '../../../hooks/useAuth';
 
 
 
@@ -34,6 +35,8 @@ const drawerWidth = 240;
 function Dashboard(props) {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
+
+    const { admin } = useAuth();
 
 
 
@@ -54,7 +57,13 @@ function Dashboard(props) {
                 <br /> <br />
                 <Link className='text-danger text-decoration-none fw-bold ms-5 mt-3' to="review">REVIEW</Link>
                 <br /> <br />
-                <Link className='text-danger text-decoration-none fw-bold ms-5 mt-3' to="makeAdmin">MAKE ADMIN</Link>
+
+                {
+                    admin && <Box>
+                        <Link className='text-danger text-decoration-none fw-bold ms-5 mt-3' to="makeAdmin">MAKE ADMIN</Link>
+                    </Box>
+                }
+
             </List>
 
 

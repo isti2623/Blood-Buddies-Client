@@ -13,7 +13,7 @@ import Register from './Pages/Login/Register/Register';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
-import DashboardHome from './Pages/Dashboard/DashboardHome/DashboardHome';
+
 import MyPost from './Pages/Dashboard/MyPost/MyPost';
 import Review from './Pages/Dashboard/Review/Review';
 import MakeAdmin from './Pages/Dashboard/MakeAdmin/MakeAdmin';
@@ -36,8 +36,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/dashboard" element={<Dashboard />}>
-              <Route path="dashboardHome" element={<DashboardHome />}>
-              </Route>
+
               <Route path="myPost" element={<MyPost />}>
 
               </Route>

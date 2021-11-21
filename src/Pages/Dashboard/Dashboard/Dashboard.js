@@ -19,19 +19,14 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 
 import {
-    BrowserRouter as Router,
-    Routes,
-    Outlet,
-    Route,
-    Link,
-    useParams,
-    NavLink
-} from "react-router-dom";
-import DashboardHome from '../DashboardHome/DashboardHome';
-import MakeAdmin from '../MakeAdmin/MakeAdmin';
-import MyPost from '../MyPost/MyPost';
 
-import Review from '../Review/Review';
+
+    Outlet,
+
+    Link,
+
+} from "react-router-dom";
+
 
 
 const drawerWidth = 240;
@@ -51,20 +46,17 @@ function Dashboard(props) {
         <div>
             <Toolbar />
             <Divider />
-            <List>
-                <Link to="/home">BACK TO HOME</Link>
-                <br />
-                <Link to="dashboardHome">DASHBOARD</Link>
-                <br />
-                <Link to="myPost">MY POST</Link>
-                <br />
-                <Link to="review">REVIEW</Link>
-                <br />
-                <Link to="makeAdmin">MAKE ADMIN</Link>
+            <List className='bg-white'>
+                <Link className='text-danger text-decoration-none fw-bold ms-5 mt-2' to="/home">BACK TO HOME</Link>
+                <br /> <br />
 
-
-
+                <Link className='text-danger text-decoration-none fw-bold ms-5 mt-3' to="myPost">MY POST</Link>
+                <br /> <br />
+                <Link className='text-danger text-decoration-none fw-bold ms-5 mt-3' to="review">REVIEW</Link>
+                <br /> <br />
+                <Link className='text-danger text-decoration-none fw-bold ms-5 mt-3' to="makeAdmin">MAKE ADMIN</Link>
             </List>
+
 
 
         </div>

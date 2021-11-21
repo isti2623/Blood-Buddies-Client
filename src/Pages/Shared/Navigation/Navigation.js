@@ -104,7 +104,7 @@ const Navigation = () => {
                                         color: "black"
                                     }}
                                 >
-                                    Dashboard
+                                    DASHBOARD
                                 </NavLink>
                             }
                             <div>

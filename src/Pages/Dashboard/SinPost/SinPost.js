@@ -17,7 +17,7 @@ const SinPost = (props) => {
                         <h2 className='mt-3'><span className='text-danger fw-bold'>Name:</span> {patientName}</h2>
                         <h4 className='mt-3'><span className='text-danger fw-bold'>Age:</span> {age}</h4>
                         <h6 className='mt-3'><span className='text-danger fw-bold'>Details:</span> {details}</h6>
-                        <div className="btn btn-danger">DELETE</div>
+                        <div className="btn btn-danger mb-2">DELETE</div>
 
                     </div>
                     <div className="col-md-4 mb-5 date-card">

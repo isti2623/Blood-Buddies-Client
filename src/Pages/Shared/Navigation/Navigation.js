@@ -24,7 +24,7 @@ const Navigation = () => {
                             >
                                 HOME
                             </NavLink>
-                            <NavLink
+                            {/*  <NavLink
                                 className='ms-4 text-decoration-none text-dark mt-3'
                                 to="/about"
                                 activeStyle={{
@@ -46,7 +46,7 @@ const Navigation = () => {
                                 >
                                     CAMPAIGN
                                 </NavLink>
-                            }
+                            } */}
 
                             {
                                 user.email &&
@@ -74,7 +74,7 @@ const Navigation = () => {
                                     ADD BLOOD REQUEST
                                 </NavLink>
                             }
-                            <NavLink
+                            {/*   <NavLink
                                 className='ms-4 text-decoration-none text-dark mt-3'
                                 to="/blog"
                                 activeStyle={{
@@ -93,7 +93,7 @@ const Navigation = () => {
                                 }}
                             >
                                 CONTACT
-                            </NavLink>
+                            </NavLink> */}
                             {
                                 user.email &&
                                 <NavLink

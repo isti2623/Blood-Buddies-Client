@@ -7,7 +7,7 @@ const AdminDoner = (props) => {
     const { del, setDel } = props;
     /* const [postDel, setPostDel] = useState(); */
     const handleDeleteBlood = id => {
-        const url = `http://localhost:5000/bloodPostReq/${id}`
+        const url = `https://nameless-thicket-31086.herokuapp.com/bloodPostReq/${id}`
         fetch(url, {
             method: 'DELETE',
         })

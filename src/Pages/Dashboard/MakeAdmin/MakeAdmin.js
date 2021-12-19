@@ -13,7 +13,7 @@ const MakeAdmin = () => {
 
     const handleAdminSubmit = e => {
         const user = { email };
-        fetch('http://localhost:5000/userInfo/admin', {
+        fetch('https://nameless-thicket-31086.herokuapp.com/userInfo/admin', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

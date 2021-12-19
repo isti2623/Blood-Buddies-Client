@@ -6,7 +6,7 @@ import SingleDoner from '../SingleDoner/SingleDoner';
 const NeedDoners = () => {
     const [doners, setDoners] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:5000/bloodPostReq")
+        fetch("https://nameless-thicket-31086.herokuapp.com/bloodPostReq")
             .then(res => res.json())
             .then(data => setDoners(data))
     }, [])

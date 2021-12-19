@@ -33,7 +33,7 @@ const AddBloodRequest = () => {
         const bloodPost = { ...bloodReq }
         setBloodReq(bloodPost);
         //send to server
-        fetch("http://localhost:5000/bloodPostReq", {
+        fetch("https://nameless-thicket-31086.herokuapp.com/bloodPostReq", {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
